@@ -43,10 +43,8 @@ docker compose up -d --build
 Для загрузки данных на слой RD необходимо воспользоваться аналогичным методом загрузки данных из CSV файла в БД, которым Вы пользовались в первом задании. После того, как данные будут успешно загружены, необходимо написать процедуру, которая будет повторять шаги из прототипа для выполнения перегрузки данных в витрину.
 
 [./sql/refresh_loan_holiday_info.sql](./sql/refresh_loan_holiday_info.sql) - процедура пересчета витрины
+
 [./scripts/task_2_2_solutions.py](./scripts/task_2_2_solutions.py) - скрипт решения
-<<<<<<< Updated upstream
-[./scripts/TASK_2_2_README.md](./scripts/TASK_2_2_README.md) - описание решения
-=======
 
 [./scripts/TASK_2_2_README.md](./scripts/TASK_2_2_README.md) - описание решения
 
@@ -78,4 +76,3 @@ docker compose up -d --build
 [./sql/refresh_account_balance_turnover.sql](./sql/refresh_account_balance_turnover.sql) - процедура пересчета витрины
 
 [./scripts/TASK_2_3_README.md](./scripts/TASK_2_3_README.md) - описание решения
->>>>>>> Stashed changes
