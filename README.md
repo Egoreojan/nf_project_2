@@ -44,4 +44,38 @@ docker compose up -d --build
 
 [./sql/refresh_loan_holiday_info.sql](./sql/refresh_loan_holiday_info.sql) - процедура пересчета витрины
 [./scripts/task_2_2_solutions.py](./scripts/task_2_2_solutions.py) - скрипт решения
+<<<<<<< Updated upstream
 [./scripts/TASK_2_2_README.md](./scripts/TASK_2_2_README.md) - описание решения
+=======
+
+[./scripts/TASK_2_2_README.md](./scripts/TASK_2_2_README.md) - описание решения
+
+### Задание 2.3
+
+Имеется витрина dm.account_balance_turnover, которая отражает изменение баланса счетов по дням. Заказчик очень требователен в части заполнения всех полей этой витрины, например суммы на начало и конец дня, наименование валюты. Во время проверки качества данных обнаружили, что у счетов иногда отличается account_out_sum - сумма на конец одного дня и account_in_sum - сумма на начало следующего.
+
+Витрина dm.account_balance_turnover строится на основе 3 источников:
+
+- rd.account – информация по счетам клиентов
+
+- rd.account_balance – информация с номер счета клиента и суммами на начало и конец дня
+
+- dm.dict_currency – справочник валют
+
+Для витрина имеется прототип account_balance_turnover_prototype.sql.
+
+Необходимо:
+
+1)    Подготовить запрос, который определит корректное значение поля account_in_sum. Если значения полей account_in_sum одного дня и account_out_sum предыдущего дня отличаются, то корректным выбирается значение account_out_sum предыдущего дня.
+
+2)    Подготовить такой же запрос, только проблема теперь в том, что account_in_sum одного дня правильная, а account_out_sum предыдущего дня некорректна. Это означает, что если эти значения отличаются, то корректным значением для account_out_sum предыдущего дня выбирается значение account_in_sum текущего дня.
+
+3)    Подготовить запрос, который поправит данные в таблице rd.account_balance используя уже имеющийся запрос из п.1
+
+4)    Написать процедуру по аналогии с задание 2.2 для перезагрузки данных в витрину
+
+
+[./sql/refresh_account_balance_turnover.sql](./sql/refresh_account_balance_turnover.sql) - процедура пересчета витрины
+
+[./scripts/TASK_2_3_README.md](./scripts/TASK_2_3_README.md) - описание решения
+>>>>>>> Stashed changes
